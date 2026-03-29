@@ -147,7 +147,7 @@ const committeeMembers = [
     color: "red",
     members: [
       { name: "Anushuya Paul", github: "#", linkedin: "#", insta: "https://instagram.com/anushuyagghhh", photo: "/committee_picture/IMG-20250929-WA0068 - Anushuya Paul.jpg" },
-      { name: "Anwesha Choudhury", github: "#", linkedin: "#", insta: "#" },
+      { name: "Anwesha Choudhury", github: "#", linkedin: "https://www.linkedin.com/in/anwesha-chaudhury-67a050292", insta: "https://instagram.com/___anwesha_is_ded___", photo: "/committee_picture/IMG-20250716-WA0001(1)~2 - Anwesha Chaudhury.jpg " },
       { name: "Abinash Sarmah", github: "#", linkedin: "https://www.linkedin.com/in/abinash-sarmah-46718124b?utm_source=share_via&utm_content=profile&utm_medium=member_android", insta: "https://instagram.com/abinashsarmah16", photo: "/committee_picture/IMG-20260329-WA0004 - Abinash Sarmah.jpg" }
     ]
   },
@@ -691,8 +691,8 @@ function App() {
 
       {/* Professional 'Utility Belt' Navbar */}
       {isMobile ? (
-        <MobileAppNav 
-          activeSection={activeSection || 'home'} 
+        <MobileAppNav
+          activeSection={activeSection || 'home'}
           onNavigate={(id) => {
             scrollToSection(id);
             setActiveSection(id);
@@ -1391,8 +1391,8 @@ function App() {
           <div className="comms-data-panels mobile-full-panel" onClick={e => e.stopPropagation()}>
             <div className="comms-mobile-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <div className="matrix-status">STATUS: ONLINE</div>
-              <button 
-                className="comms-close-action" 
+              <button
+                className="comms-close-action"
                 onClick={() => setCommsOverlayOpen(false)}
                 style={{ background: '#ff3131', color: '#fff', border: '2px solid #000', padding: '5px 15px', fontWeight: '900', fontSize: '1rem', cursor: 'pointer', boxShadow: '4px 4px 0 #000' }}
               >✕ ABORT</button>
