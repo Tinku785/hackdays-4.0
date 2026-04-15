@@ -14,35 +14,99 @@ const SpeedLines = lazy(() => import('./components/SpeedLines'));
 const TradingCard = lazy(() => import('./components/TradingCard'));
 import StarSVG from './components/StarSVG';
 import MobileAppNav from './components/MobileAppNav';
+import { image } from 'framer-motion/client';
 
 const creativeEvents = [
   {
     id: 1,
     title: 'TECHNICAL EVENTS',
-    list: 'Hackathons, Code Gem,\nUI/UX Designing, Bug Bounty,\nTyping Competition, Tech Quiz',
+    list: 'Hackathons, Code Gem,\nUI/UX Designing,\nTyping Competition, Tech Quiz',
     bg: '/tech_events.png',
     exclaim: 'PEW!',
     rotation: '-4deg',
     subEvents: [
-      { id: 't1', title: 'Hackathons', image: '/comic_hackathon.png', link: '#' },
-      { id: 't2', title: 'Code Gem', image: '/tech_events.png', link: '#' },
-      { id: 't3', title: 'UI/UX Designing', image: '/comic_uiux.png', link: '#' },
-      { id: 't4', title: 'Bug Bounty', image: '/tech_events.png', link: '#' },
-      { id: 't5', title: 'Typing Competition', image: '/tech_events.png', link: '#' },
-      { id: 't6', title: 'Tech Quiz', image: '/tech_events.png', link: '#' },
+      {
+        id: 't1',
+        title: 'Hackathons',
+        image: '/comic_hackathon.png',
+        link: 'https://docs.google.com/forms/d/e/1FAIpQLSfP8HRAS9gqe3SkfL8HVdsVAR3yDKErp5saBNstg40XzsyV8A/viewform?usp=header',
+        prizes: 'Winner: ₹9,000 | Runner-up: ₹3,000',
+        rules: 'Max team of 5. Must build project from scratch. Use of AI tools permitted.',
+        process: '1 week Build -> Idea Pitch -> Mentoring -> Final Demo'
+      },
+      {
+        id: 't2',
+        title: 'Code Gem',
+        image: '/tech_events.png',
+        link: 'https://docs.google.com/forms/d/e/1FAIpQLSeQKVr1CQJrz-HfkN0OhwXL6q9ZKBxgTvNULC-6ARQpb9FkFA/viewform?usp=sharing&ouid=102858058196643049393',
+        prizes: 'Winner: ₹4000 | Runner-up: ₹2000',
+        rules: 'Individual participation. 3 coding problems. C/C++/Java/Python allowed.',
+        process: 'Registration -> Online Round -> Rewards'
+      },
+      {
+        id: 't3',
+        title: 'UI/UX Designing',
+        image: '/comic_uiux.png',
+        link: 'https://docs.google.com/forms/d/e/1FAIpQLSdC6CntNZJfIywjjNl-Oec8WF9eLaECXZnlJwlgzuGk2yBwog/viewform?usp=sharing&ouid=102858058196643049393',
+        prizes: 'Winner: ₹3000 | Runner-up: ₹1000',
+        rules: 'Figma/AdobeXD only. Topic given on spot. 3 hours duration.',
+        process: 'Briefing -> Wireframing -> Hi-Fi Design -> Presentation'
+      },
+      {
+        id: 't4',
+        title: 'Typing Competition',
+        image: '/typing_event.png',
+        link: 'https://docs.google.com/forms/d/e/1FAIpQLSeOZAfc0PzUPZ_pqRJ2Zv-yvhdgSYyVP0-WqC_bCH3d8d4_DQ/viewform?usp=sharing&ouid=102858058196643049393',
+        prizes: '₹2,000',
+        rules: 'Standard QWERTY layout. Highest WPM with 95%+ accuracy wins.',
+        process: 'Round 1 (1 min) -> Round 2 (5 mins) -> Final Showdown'
+      },
+      {
+        id: 't5',
+        title: 'Tech Quiz',
+        image: '/quiz_event.png',
+        link: 'https://docs.google.com/forms/d/e/1FAIpQLSe1b3cFVmnGWyQjou_APB8GB0Q3UAOB_uEQ5R3h_OTvdhLpJg/viewform?usp=sharing&ouid=102858058196643049393',
+        prizes: '₹2,000',
+        rules: 'Teams of 2 or individual participant. Questions based on tech history, IT trends, and pop culture.',
+        process: 'Rapid Fire Questions'
+      },
+      {
+        id: 't6',
+        title: 'Cypher',
+        image: '/cypher_event.png',
+        link: 'https://docs.google.com/forms/d/e/1FAIpQLSdrezvbhEyBIB47dMB06ZieOKR1BwkSkq74euBe7Wl7_5BxkA/viewform?usp=sharing&ouid=102858058196643049393',
+        prizes: 'Winner:₹2,000 | Runner-up:₹1,000',
+        rules: 'CTF style challenges. No destructive attacks outside targets.',
+        process: 'Access Provided -> Flag Hunting -> Verification -> Leaderboard'
+      },
     ]
   },
   {
     id: 2,
     title: 'E-SPORTS EVENTS',
-    list: 'Mobile Legends\nBGMI\n& More...',
+    list: 'Mobile Legends\nBGMI\n',
     bg: '/esports_events.png',
     exclaim: 'OHH!',
     rotation: '3deg',
     subEvents: [
-      { id: 'e1', title: 'Mobile Legends', image: '/comic_gaming.png', link: '#' },
-      { id: 'e2', title: 'BGMI', image: '/comic_gaming.png', link: '#' },
-      { id: 'e3', title: 'Valorant', image: '/esports_events.png', link: '#' }
+      {
+        id: 'e1',
+        title: 'Mobile Legends',
+        image: '/comic_gaming.png',
+        link: 'https://docs.google.com/forms/d/e/1FAIpQLSdgSHl1tY3JVaFC6rK0akhe3_g-D9igxY17WUupoZC9_hBvvw/viewform?usp=header',
+        prizes: '₹10,000 PRIZE POOL',
+        rules: '5v5 draft pick mode. Emulators strictly prohibited.',
+        process: 'Qualifiers -> Quarter Finals -> Semi Finals -> Grand Finals'
+      },
+      {
+        id: 'e2',
+        title: 'BGMI',
+        image: '/comic_gaming.png',
+        link: 'https://docs.google.com/forms/d/e/1FAIpQLSfZb-XSb5g1dk4ZrgbMbCqGV1I6TvfGHW2aSuyOsrVAQBXh2Q/viewform?usp=sharing&ouid=102858058196643049393',
+        prizes: '₹10,000 PRIZE POOL',
+        rules: 'Squad match. Official maps. No hacks/scripts.',
+        process: 'Custom Rooms -> Points System -> Final Zone Showdown'
+      },
     ]
   },
   {
@@ -53,29 +117,67 @@ const creativeEvents = [
     exclaim: 'HOW!',
     rotation: '-2deg',
     subEvents: [
-      { id: 'l1', title: 'Technical Sessions', image: '/lecture_series.png', link: '#' },
-      { id: 'l2', title: 'Tech Workshops', image: '/lecture_series.png', link: '#' },
-      { id: 'l3', title: 'Technical Seminars', image: '/lecture_series.png', link: '#' }
+      {
+        id: 'l1',
+        title: 'Technical Sessions',
+        image: '/lecture_series.png',
+        link: '#',
+        prizes: 'KNOWLEDGE & CERTIFICATE',
+        rules: 'Open for all attendees. Must register prior to seat filling.',
+        process: 'Registration -> Attend Session -> Q&A -> Certificate'
+      },
+      {
+        id: 'l2',
+        title: 'Tech Workshops',
+        image: '/lecture_series.png',
+        link: '#',
+        prizes: 'HANDS-ON EXPERIENCE',
+        rules: 'Bring your own laptop. Prerequisites must be installed.',
+        process: 'Introduction -> Live Coding -> Practical Tasks -> Showcase'
+      },
+      {
+        id: 'l3',
+        title: 'Technical Seminars',
+        image: '/lecture_series.png',
+        link: '#',
+        prizes: 'INDUSTRY INSIGHTS',
+        rules: 'Audience interaction encouraged. Formals preferred.',
+        process: 'Guest Welcome -> Keynote Address -> Panel Discussion -> Networking'
+      }
     ]
   },
   {
     id: 4,
     title: 'FUN EVENTS',
-    list: "Chess Master 3x3, Rubic's Cube,\nHousie,\nIPL Mock Auction",
+    list: "Chess Master 3x3,\nIPL Mock Auction",
     bg: '/fun_events.png',
     exclaim: 'AAAH!',
     rotation: '5deg',
     subEvents: [
-      { id: 'f1', title: 'Chess Master 3x3', image: '/fun_events.png', link: '#' },
-      { id: 'f2', title: "Rubic's Cube", image: '/fun_events.png', link: '#' },
-      { id: 'f3', title: 'Housie', image: '/fun_events.png', link: '#' },
-      { id: 'f4', title: 'IPL Mock Auction', image: '/fun_events.png', link: '#' }
+      {
+        id: 'f1',
+        title: 'Chess Master 3x3',
+        image: '/chess_event.png',
+        link: 'https://docs.google.com/forms/d/e/1FAIpQLSdKYfphDq0N6aXjEw8Th42IBFiw__wTGedB57-iVuh1e2l7vQ/viewform?usp=header',
+        prizes: 'Winner:₹1,500 | Runner-up:₹500',
+        rules: 'Standard FIDE blitz rules apply. 3+2 time control.',
+        process: 'Swiss Format -> Top 8 Knockout -> Grand Final'
+      },
+      {
+        id: 'f2',
+        title: 'IPL Mock Auction',
+        image: '/ipl_event.png',
+        link: 'https://docs.google.com/forms/d/e/1FAIpQLSeZy6aPcEEnNAOqOfzH2_08aQsQUrBHCaRh-EhGg4mmEBj0XQ/viewform?usp=sharing&ouid=102858058196643049393',
+        prizes: 'Winner:₹4,000 | Runner-up:₹3,000',
+        rules: 'Teams of up to 4. Virtual budget limit. Highest team ratings wins.',
+        process: 'Player Bidding -> Roster Formation -> Stats Evaluation -> Winner'
+      }
     ]
   },
   {
     id: 5,
     title: 'KALAKRITI',
-    list: 'Short Film,\nPhotography',
+    list: 'Short Film',
     bg: '/fun_events.png',
     exclaim: 'WOW!',
     rotation: '-3deg',
@@ -84,19 +186,19 @@ const creativeEvents = [
         id: 'k1',
         title: 'Short Film',
         image: '/comic_uiux.png',
-        link: '#',
-        prizes: '₹10,000 + TROPHY',
+        link: 'https://docs.google.com/forms/d/e/1FAIpQLSeKC4e5HCxYHN9rmM3AhjkV4FLw3-27xZM1I9mOOhTUjoIBzw/viewform?usp=sharing&ouid=102858058196643049393',
+        prizes: 'Winner:₹2,000 | Runner-up:₹1,000',
         rules: 'Duration: 3-10 mins. Theme: Cinematic Tech. Originals only.',
         process: 'Register -> Concept -> Submission -> Screening'
       },
       {
         id: 'k2',
-        title: 'Photography',
-        image: '/tech_events.png',
-        link: '#',
-        prizes: '₹5,000 + VOUCHERS',
-        rules: 'Topic: Interaction. No AI Generative. EXIF Required.',
-        process: 'Capture -> Edit -> Upload -> Exhibition'
+        title: 'Digital Art',
+        image: '/comic_uiux.png',
+        link: 'https://docs.google.com/forms/d/e/1FAIpQLSdRtivMkleBqFeIxGa9SrEwjlt01iJQrziijnP46buaQKVt3g/viewform?usp=sharing&ouid=102858058196643049393',
+        prizes: 'Winner:₹2,000 | Runner-up:₹1,000',
+        rules: 'Theme: Cinematic Tech. Originals only.',
+        process: 'Register -> Concept -> Submission -> Screening'
       }
     ]
   }
@@ -195,23 +297,14 @@ const merch = [
   {
     title: 'HACKDAYS 4.0 REGULAR FIT',
     originalPrice: '₹499',
-    price: '₹299',
-    image: '/mercch/regularfit_frontside.jpg',
-    backImage: '/mercch/regularfit_backside.jpg',
+    price: '₹429',
+    image: '/tshirt_new2.jpeg',
+    backImage: '/tshirt_new.jpeg',
     color: 'black',
-    urgency: 'ONLY 15 LEFT!',
-    discount: '40% OFF'
+    urgency: 'FOR FIRST 50 CUSTOMERS ONLY!',
+    discount: '15% OFF'
   },
-  {
-    title: 'HACKDAYS 4.0 OVERSIZED',
-    originalPrice: '₹599',
-    price: '₹399',
-    image: '/mercch/oversize_frontsize.jpg',
-    backImage: '/mercch/oversized_backside.jpg',
-    color: 'black',
-    urgency: 'LIMITED EDITION',
-    discount: '33% OFF'
-  },
+
 ];
 
 // Multiverse Gallery Assets
@@ -558,7 +651,7 @@ function App() {
 
 
   useEffect(() => {
-    const targetDate = new Date('2026-04-28T00:00:00').getTime(); // Event starts 28th April
+    const targetDate = new Date('2026-04-30T00:00:00').getTime(); // Event starts 30th April
     const interval = setInterval(() => {
       const now = new Date().getTime();
       const distance = targetDate - now;
@@ -757,18 +850,18 @@ function App() {
               <>
                 <div className="hero-side-img img-left comic-torn-edge" style={{ ...portraitStyle, transform: `${portraitStyle.transform} translate(var(--mouse-x, 0), var(--mouse-y, 0))` }}>
                   {/* Hero Mode: Use the newly generated pic | Villain Mode: Use 90s cartoon villain */}
-                  <img src={isVillainMode ? "/villain_90s.png" : "/hero_90s.png"} alt="Marvel Hero/Villain" />
+                  <img src={isVillainMode ? "/villain_90s.png" : "/Spider_Man.webp"} alt="Marvel Hero/Villain" />
                 </div>
                 <div className="img-speech speech-left" style={{ opacity: portraitOpacity, transform: `translate(calc(var(--mouse-x, 0) * 0.5), calc(var(--mouse-y, 0) * 0.5))` }}>
                   {isVillainMode ? "MUAHAHA!" : "LET'S GO!"}
                 </div>
 
                 <div className="hero-side-img img-right-top comic-torn-edge" style={{ ...portraitStyle, transform: `${portraitStyle.transform} translate(calc(var(--mouse-x, 0) * -1), calc(var(--mouse-y, 0) * -1))` }}>
-                  <img src={isVillainMode ? "/villain_loki.png" : "/nova.png"} alt="Marvel Hero/Villain" />
+                  <img src={isVillainMode ? "/villain_loki.png" : "/iron_man.jpg"} alt="Marvel Hero/Villain" />
                 </div>
 
                 <div className="hero-side-img img-right-bottom comic-torn-edge" style={{ ...portraitStyle, transform: `${portraitStyle.transform} translate(calc(var(--mouse-x, 0) * 0.8), calc(var(--mouse-y, 0) * 0.8))` }}>
-                  <img src={isVillainMode ? "/villain_thanos.png" : "/ironman.png"} alt="Marvel Hero/Villain" />
+                  <img src={isVillainMode ? "/villain_thanos.png" : "/Deadpool.png"} alt="Marvel Hero/Villain" />
                 </div>
               </>
             );
@@ -812,7 +905,7 @@ function App() {
             </div>
 
             <div className="hero-date-text" style={{ fontSize: '2rem', fontFamily: 'var(--font-heading)', color: 'var(--marvel-yellow)', textShadow: '2px 2px 0 var(--black)', WebkitTextStroke: '1.5px var(--black)', transform: 'rotate(-2deg)' }}>
-              28TH, 29TH, 30TH APRIL 2026
+              30TH APRIL & 1ST MAY 2026
             </div>
           </div>
 
@@ -1044,25 +1137,29 @@ function App() {
                 <h3>TITLE SPONSOR</h3>
               </div>
               <div className="sponsor-boxes">
-                <div className="sponsor-box">
-                  <div className="pin-top-right"></div>
-                  YOUR LOGO
-                </div>
-                <div className="sponsor-box">
-                  <div className="pin-top-right"></div>
-                  YOUR LOGO
+                <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'var(--marvel-red)', textShadow: '2px 2px 0 var(--black)', fontFamily: 'var(--font-heading)', background: 'var(--marvel-yellow)', padding: '1rem 3rem', border: '4px solid var(--black)', transform: 'rotate(-2deg)', boxShadow: '6px 6px 0 var(--black)' }}>
+                  Revealing soon !
                 </div>
               </div>
             </div>
 
             <div className="sponsor-tier red">
               <div style={{ textAlign: 'center' }}>
-                <h3>CO-SPONSORS</h3>
+                <h3>COMMUNITY PARTNERS</h3>
               </div>
               <div className="sponsor-boxes">
-                <div className="sponsor-box small">YOUR LOGO</div>
-                <div className="sponsor-box small">YOUR LOGO</div>
-                <div className="sponsor-box small">YOUR LOGO</div>
+                <div className="sponsor-box small">
+                  <img src="/web3assam_logo.jpg" alt="Pym Tech" className="sponsor-logo" />
+                  <span className="sponsor-name">Web3 Assam</span>
+                </div>
+                <div className="sponsor-box small">
+                  <img src="/nexus.png" alt="Daily Bugle" className="sponsor-logo" />
+                  <span className="sponsor-name">Nexus Summer Of Code</span>
+                </div>
+                {/* <div className="sponsor-box small">
+                  <img src="https://placehold.co/300x150/ffffff/111111?text=WAYNE" alt="Wayne Ent." className="sponsor-logo" />
+                  <span className="sponsor-name">Wayne Ent.</span>
+                </div> */}
               </div>
             </div>
 
@@ -1071,10 +1168,22 @@ function App() {
                 <h3>IN-KIND SPONSORS</h3>
               </div>
               <div className="sponsor-boxes">
-                <div className="sponsor-box small">YOUR LOGO</div>
-                <div className="sponsor-box small">YOUR LOGO</div>
-                <div className="sponsor-box small">YOUR LOGO</div>
-                <div className="sponsor-box small">YOUR LOGO</div>
+                <div className="sponsor-box small">
+                  <img src="/GeeksForGeeks_logo.png" alt="GeeksForGeeks" className="sponsor-logo" />
+                  <span className="sponsor-name">GeeksForGeeks</span>
+                </div>
+                <div className="sponsor-box small">
+                  <img src="gitkraken-logo-dark-sq.png" alt="GitKraken" className="sponsor-logo" />
+                  <span className="sponsor-name">GitKraken</span>
+                </div>
+                {/* <div className="sponsor-box small">
+                  <img src="https://placehold.co/200x100/ffffff/ff9900?text=PIZZA" alt="Pizza Time" className="sponsor-logo" />
+                  <span className="sponsor-name">Pizza Time</span>
+                </div>
+                <div className="sponsor-box small">
+                  <img src="https://placehold.co/200x100/ffffff/0000ff?text=V-HT" alt="Vought Int." className="sponsor-logo" />
+                  <span className="sponsor-name">Vought Int.</span>
+                </div> */}
               </div>
             </div>
 
@@ -1206,7 +1315,7 @@ function App() {
                       <span className="original-price">{item.originalPrice}</span>
                       <span className="price">{item.price}</span>
                     </div>
-                    <button className="comic-button btn-red" style={{ width: '100%' }}>BUY NOW</button>
+                    <a href='https://docs.google.com/forms/d/e/1FAIpQLScwF_1m1UZg2CBN7yHwR0wR20Gy2ZHzEd4GVTQ3ardQZADcmg/viewform?usp=publish-editor' target="_blank" rel="noopener noreferrer"> <button className="comic-button btn-red" style={{ width: '100%' }}>BUY NOW</button></a>
                   </div>
                 </div>
               ))}
@@ -1222,10 +1331,7 @@ function App() {
               <div>
                 <div className="footer-logo">HACKDAYS 4.0</div>
                 <p style={{ opacity: 0.7, marginTop: '1rem', fontFamily: 'var(--font-body)' }}>Code, Build, Create. Join the biggest hackathon of the year and show your marvel powers.</p>
-                <button className="comic-button yellow" style={{ marginTop: '1.5rem', fontSize: '1rem' }} onClick={() => {
-                  new Audio("/Voicy_At Your Service Sir.mp3").play().catch(e => console.log(e));
-                  window.open("#", "_blank");
-                }}>JOIN DISCORD</button>
+
               </div>
 
               <div>
@@ -1236,7 +1342,7 @@ function App() {
                     <li><a href="#">Events</a></li>
                     <li><a href="#">Sponsors</a></li>
                     <li><a href="#">Merch Store</a></li>
-                    <li><a href="#">Contact Support</a></li>
+
                   </ul>
                 </div>
               </div>
@@ -1296,7 +1402,7 @@ function App() {
             </div>
 
             <div style={{ textAlign: 'center', padding: '2rem 0', borderTop: '2px solid rgba(255,255,255,0.1)', opacity: 0.8, fontFamily: 'var(--font-body)', fontSize: '0.9rem', color: '#fff' }}>
-              <p>&copy; Designed By Tinku with AI broh ;2026 HACKDAYS PORT. ALL RIGHTS RESERVED.</p>
+              <p>&copy; Designed By Tinku & Rishikul with AI broh ;2026 HACKDAYS PORT. ALL RIGHTS RESERVED.</p>
             </div>
           </div>
         </footer>
