@@ -30,7 +30,7 @@ const creativeEvents = [
         title: 'Hackathons',
         image: '/comic_hackathon.png',
         link: 'https://docs.google.com/forms/d/e/1FAIpQLSfP8HRAS9gqe3SkfL8HVdsVAR3yDKErp5saBNstg40XzsyV8A/viewform?usp=header',
-        prizes: 'Winner: ₹9,000 | Runner-up: ₹3,000',
+        prizes: 'Winner: ₹8,000 | Runner-up: ₹4,000',
         rules: 'Max team of 5. Must build project from scratch. Use of AI tools permitted.',
         process: '1 week Build -> Idea Pitch -> Mentoring -> Final Demo'
       },
@@ -47,7 +47,7 @@ const creativeEvents = [
         id: 't3',
         title: 'UI/UX Designing',
         image: '/comic_uiux.png',
-        link: 'https://docs.google.com/forms/d/e/1FAIpQLSdC6CntNZJfIywjjNl-Oec8WF9eLaECXZnlJwlgzuGk2yBwog/viewform?usp=sharing&ouid=102858058196643049393',
+        link: 'https://forms.gle/oQeV28VeQmxcwKK97',
         prizes: 'Winner: ₹3000 | Runner-up: ₹1000',
         rules: 'Figma/AdobeXD only. Topic given on spot. 3 hours duration.',
         process: 'Briefing -> Wireframing -> Hi-Fi Design -> Presentation'
@@ -75,10 +75,19 @@ const creativeEvents = [
         title: 'Cypher',
         image: '/cypher_event.png',
         link: 'https://docs.google.com/forms/d/e/1FAIpQLSdrezvbhEyBIB47dMB06ZieOKR1BwkSkq74euBe7Wl7_5BxkA/viewform?usp=sharing&ouid=102858058196643049393',
-        prizes: 'Winner:₹2,000 | Runner-up:₹1,000',
+        prizes: 'Winner:₹3,000',
         rules: 'CTF style challenges. No destructive attacks outside targets.',
         process: 'Access Provided -> Flag Hunting -> Verification -> Leaderboard'
       },
+      {
+        id: 't7',
+        title: 'Bug Bounty',
+        image: '/bug_bounty_event.png',
+        link: 'https://docs.google.com/forms/d/e/1FAIpQLSceDt9A5-X2_5SZe9MGfvMhxFGphe0GxzxBaOiB80fD1Hx7-Q/viewform',
+        prizes: 'Winner: ₹2,000 | Runner-up: ₹1,000',
+        rules: 'Team Size: 1-3. Mode: Offline. Analyze provided codebases to either identify bugs or fix them.',
+        process: 'Download Problem -> Analyze & Debug Locally -> Upload Solution'
+      }
     ]
   },
   {
@@ -167,7 +176,7 @@ const creativeEvents = [
         id: 'f2',
         title: 'IPL Mock Auction',
         image: '/ipl_event.png',
-        link: 'https://docs.google.com/forms/d/e/1FAIpQLSeZy6aPcEEnNAOqOfzH2_08aQsQUrBHCaRh-EhGg4mmEBj0XQ/viewform?usp=sharing&ouid=102858058196643049393',
+        link: 'https://docs.google.com/forms/d/e/1FAIpQLSeZy6aPcEEnNAOqOfzH2_08aQsQUrBHCaRh-EhGg4mmEBj0XQ/viewform?usp=sharing&ouid=104815312117715119166',
         prizes: 'Winner:₹4,000 | Runner-up:₹3,000',
         rules: 'Teams of up to 4. Virtual budget limit. Highest team ratings wins.',
         process: 'Player Bidding -> Roster Formation -> Stats Evaluation -> Winner'
@@ -177,14 +186,14 @@ const creativeEvents = [
   {
     id: 5,
     title: 'KALAKRITI',
-    list: 'Short Film',
+    list: 'Short Film, Digital Art',
     bg: '/fun_events.png',
     exclaim: 'WOW!',
     rotation: '-3deg',
     subEvents: [
       {
         id: 'k1',
-        title: 'Short Film',
+        title: 'Short Film,\nDigital Art',
         image: '/comic_uiux.png',
         link: 'https://docs.google.com/forms/d/e/1FAIpQLSeKC4e5HCxYHN9rmM3AhjkV4FLw3-27xZM1I9mOOhTUjoIBzw/viewform?usp=sharing&ouid=102858058196643049393',
         prizes: 'Winner:₹2,000 | Runner-up:₹1,000',
@@ -1134,56 +1143,80 @@ function App() {
 
             <div className="sponsor-tier yellow">
               <div style={{ textAlign: 'center' }}>
-                <h3>TITLE SPONSOR</h3>
+                <h3>TITLE & CO-SPONSORS</h3>
               </div>
-              <div className="sponsor-boxes">
-                <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'var(--marvel-red)', textShadow: '2px 2px 0 var(--black)', fontFamily: 'var(--font-heading)', background: 'var(--marvel-yellow)', padding: '1rem 3rem', border: '4px solid var(--black)', transform: 'rotate(-2deg)', boxShadow: '6px 6px 0 var(--black)' }}>
+              <div className="sponsor-boxes" style={{ alignItems: 'center' }}>
+                {/* <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'var(--marvel-red)', textShadow: '2px 2px 0 var(--black)', fontFamily: 'var(--font-heading)', background: 'var(--marvel-yellow)', padding: '1rem 3rem', border: '4px solid var(--black)', transform: 'rotate(-2deg)', boxShadow: '6px 6px 0 var(--black)', marginRight: '1rem' }}>
                   Revealing soon !
+                </div> */}
+                <div className="sponsor-box small">
+                  <img src="/kuhipaat.jpg" alt="Kuhipaat communication" className="sponsor-logo" />
+                  <span className="sponsor-name">Kuhipaat Communication (Co-sponsor)</span>
                 </div>
               </div>
             </div>
 
             <div className="sponsor-tier red">
               <div style={{ textAlign: 'center' }}>
-                <h3>COMMUNITY PARTNERS</h3>
+                <h3>PARTNERS & COLLABORATORS</h3>
               </div>
               <div className="sponsor-boxes">
                 <div className="sponsor-box small">
-                  <img src="/web3assam_logo.jpg" alt="Pym Tech" className="sponsor-logo" />
-                  <span className="sponsor-name">Web3 Assam</span>
+                  <img src="/.xyz.png" alt=".XYZ Domain" className="sponsor-logo" />
+                  <span className="sponsor-name">.xyz (Domain Partner)</span>
                 </div>
                 <div className="sponsor-box small">
-                  <img src="/nexus.png" alt="Daily Bugle" className="sponsor-logo" />
-                  <span className="sponsor-name">Nexus Summer Of Code</span>
+                  <img src="/web3assam_logo.jpg" alt="Web3Assam" className="sponsor-logo" />
+                  <span className="sponsor-name">Web3Assam (Community Partner)</span>
+                </div>
+                <div className="sponsor-box small">
+                  <img src="/frint.webp" alt="Frint.in" className="sponsor-logo" />
+                  <span className="sponsor-name">Frint.in (Hiring Partner)</span>
+                </div>
+                <div className="sponsor-box small">
+                  <img src="/api_community.jpg" alt="The API Community" className="sponsor-logo" />
+                  <span className="sponsor-name">The API Community (Community Partner)</span>
+                </div>
+                <div className="sponsor-box small">
+                  <img src="/nexus.png" alt="NSOC" className="sponsor-logo" />
+                  <span className="sponsor-name">NSOC (Community Partner)</span>
+                </div>
+                <div className="sponsor-box small">
+                  <img src="/gfg_campusbody.jpg" alt="GeeksforGeeks Campus Body GU" className="sponsor-logo" />
+                  <span className="sponsor-name">GeeksforGeeks Campus GU (Community Partner)</span>
+                </div>
+                <div className="sponsor-box small">
+                  <img src="/gdgoc.jpg" alt="GDGOC GU" className="sponsor-logo" />
+                  <span className="sponsor-name">GDGOC GU (Community Partner)</span>
+                </div>
+                <div className="sponsor-box small">
+                  <img src="/gmc.png" alt="Give My Certificate" className="sponsor-logo" />
+                  <span className="sponsor-name">Give My Certificate (Certification Partner)</span>
                 </div>
                 {/* <div className="sponsor-box small">
-                  <img src="https://placehold.co/300x150/ffffff/111111?text=WAYNE" alt="Wayne Ent." className="sponsor-logo" />
-                  <span className="sponsor-name">Wayne Ent.</span>
+                  <img src="https://placehold.co/200x200/ffffff/000000?text=GDG+Guwahati" alt="GDG Guwahati" className="sponsor-logo" />
+                  <span className="sponsor-name">GDG Guwahati (Community Partner)</span>
                 </div> */}
               </div>
             </div>
 
             <div className="sponsor-tier blue">
               <div style={{ textAlign: 'center' }}>
-                <h3>IN-KIND SPONSORS</h3>
+                <h3>IN-KIND, MEDIA & ENTERTAINMENT</h3>
               </div>
               <div className="sponsor-boxes">
                 <div className="sponsor-box small">
                   <img src="/GeeksForGeeks_logo.png" alt="GeeksForGeeks" className="sponsor-logo" />
-                  <span className="sponsor-name">GeeksForGeeks</span>
+                  <span className="sponsor-name">GeeksForGeeks (In-Kind Sponsor)</span>
                 </div>
                 <div className="sponsor-box small">
-                  <img src="gitkraken-logo-dark-sq.png" alt="GitKraken" className="sponsor-logo" />
-                  <span className="sponsor-name">GitKraken</span>
-                </div>
-                {/* <div className="sponsor-box small">
-                  <img src="https://placehold.co/200x100/ffffff/ff9900?text=PIZZA" alt="Pizza Time" className="sponsor-logo" />
-                  <span className="sponsor-name">Pizza Time</span>
+                  <img src="/gplus.png" alt="Gplus" className="sponsor-logo" />
+                  <span className="sponsor-name">Gplus (Media Partner)</span>
                 </div>
                 <div className="sponsor-box small">
-                  <img src="https://placehold.co/200x100/ffffff/0000ff?text=V-HT" alt="Vought Int." className="sponsor-logo" />
-                  <span className="sponsor-name">Vought Int.</span>
-                </div> */}
+                  <img src="/knox.jpg" alt="Knox" className="sponsor-logo" />
+                  <span className="sponsor-name">Knox (Entertainment Partner)</span>
+                </div>
               </div>
             </div>
 
@@ -1315,7 +1348,7 @@ function App() {
                       <span className="original-price">{item.originalPrice}</span>
                       <span className="price">{item.price}</span>
                     </div>
-                    <a href='https://docs.google.com/forms/d/e/1FAIpQLScwF_1m1UZg2CBN7yHwR0wR20Gy2ZHzEd4GVTQ3ardQZADcmg/viewform?usp=publish-editor' target="_blank" rel="noopener noreferrer"> <button className="comic-button btn-red" style={{ width: '100%' }}>BUY NOW</button></a>
+                    <a href='https://docs.google.com/forms/d/e/1FAIpQLScwF_1m1UZg2CBN7yHwR0wR20Gy2ZHzEd4GVTQ3ardQZADcmg/viewform?usp=header' target="_blank" rel="noopener noreferrer"> <button className="comic-button btn-red" style={{ width: '100%' }}>BUY NOW</button></a>
                   </div>
                 </div>
               ))}
@@ -1402,7 +1435,7 @@ function App() {
             </div>
 
             <div style={{ textAlign: 'center', padding: '2rem 0', borderTop: '2px solid rgba(255,255,255,0.1)', opacity: 0.8, fontFamily: 'var(--font-body)', fontSize: '0.9rem', color: '#fff' }}>
-              <p>&copy; Designed By Tinku & Rishikul with AI broh ;2026 HACKDAYS PORT. ALL RIGHTS RESERVED.</p>
+              <p>&copy; Designed By Tinku & Rishikul ; 2026 HACKDAYS PORT. ALL RIGHTS RESERVED.</p>
             </div>
           </div>
         </footer>
