@@ -14,7 +14,7 @@ const MobileAppNav = ({ activeSection, onNavigate, onToggleTerminal, isVillainMo
   ];
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ y: 100 }}
       animate={{ y: 0 }}
       className={`mobile-app-nav ${isVillainMode ? 'villain-mode' : ''}`}

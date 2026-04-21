@@ -6,7 +6,7 @@ import gsap from 'gsap';
 
 // Lazy load heavy components
 const InteractiveDotGrid = lazy(() => import('./components/InteractiveDotGrid'));
-const BugHunter = lazy(() => import('./components/BugHunter'));
+// const BugHunter = lazy(() => import('./components/BugHunter'));
 const StarkOSTerminal = lazy(() => import('./components/StarkOSTerminal'));
 const SpidermanScroll = lazy(() => import('./components/SpidermanScroll'));
 const FloatingComicObjects = lazy(() => import('./components/FloatingComicObjects'));
@@ -20,14 +20,14 @@ const creativeEvents = [
   {
     id: 1,
     title: 'TECHNICAL EVENTS',
-    list: 'Hackathons, Code Gem,\nUI/UX Designing,\nTyping Competition, Tech Quiz',
+    list: 'Hackathon, Code Gem,\nCypher,\nBug Bounty,\nUI/UX Designing,\nTyping Competition, Tech Quiz',
     bg: '/tech_events.png',
     exclaim: 'PEW!',
     rotation: '-4deg',
     subEvents: [
       {
         id: 't1',
-        title: 'Hackathons',
+        title: 'Hackathon',
         image: '/comic_hackathon.png',
         link: 'https://docs.google.com/forms/d/e/1FAIpQLSfP8HRAS9gqe3SkfL8HVdsVAR3yDKErp5saBNstg40XzsyV8A/viewform?usp=header',
         prizes: 'Winner: ₹8,000 | Runner-up: ₹4,000',
@@ -45,6 +45,24 @@ const creativeEvents = [
       },
       {
         id: 't3',
+        title: 'Bug Bounty',
+        image: '/bug_bounty_event.png',
+        link: 'https://docs.google.com/forms/d/e/1FAIpQLSceDt9A5-X2_5SZe9MGfvMhxFGphe0GxzxBaOiB80fD1Hx7-Q/viewform',
+        prizes: 'Winner: ₹2,000 | Runner-up: ₹1,000',
+        rules: 'Team Size: 1-3. Mode: Offline. Analyze provided codebases to either identify bugs or fix them.',
+        process: 'Download Problem -> Analyze & Debug Locally -> Upload Solution'
+      },
+      {
+        id: 't4',
+        title: 'Cypher',
+        image: '/cypher_event.png',
+        link: 'https://docs.google.com/forms/d/e/1FAIpQLSdrezvbhEyBIB47dMB06ZieOKR1BwkSkq74euBe7Wl7_5BxkA/viewform?usp=sharing&ouid=102858058196643049393',
+        prizes: 'Winner:₹3,000',
+        rules: 'CTF style challenges. No destructive attacks outside targets.',
+        process: 'Access Provided -> Flag Hunting -> Verification -> Leaderboard'
+      },
+      {
+        id: 't5',
         title: 'UI/UX Designing',
         image: '/comic_uiux.png',
         link: 'https://forms.gle/oQeV28VeQmxcwKK97',
@@ -53,7 +71,7 @@ const creativeEvents = [
         process: 'Briefing -> Wireframing -> Hi-Fi Design -> Presentation'
       },
       {
-        id: 't4',
+        id: 't6',
         title: 'Typing Competition',
         image: '/typing_event.png',
         link: 'https://docs.google.com/forms/d/e/1FAIpQLSeOZAfc0PzUPZ_pqRJ2Zv-yvhdgSYyVP0-WqC_bCH3d8d4_DQ/viewform?usp=sharing&ouid=102858058196643049393',
@@ -62,7 +80,7 @@ const creativeEvents = [
         process: 'Round 1 (1 min) -> Round 2 (5 mins) -> Final Showdown'
       },
       {
-        id: 't5',
+        id: 't7',
         title: 'Tech Quiz',
         image: '/quiz_event.png',
         link: 'https://docs.google.com/forms/d/e/1FAIpQLSe1b3cFVmnGWyQjou_APB8GB0Q3UAOB_uEQ5R3h_OTvdhLpJg/viewform?usp=sharing&ouid=102858058196643049393',
@@ -101,7 +119,7 @@ const creativeEvents = [
       {
         id: 'e1',
         title: 'Mobile Legends',
-        image: '/comic_gaming.png',
+        image: '/ml.png',
         link: 'https://docs.google.com/forms/d/e/1FAIpQLSdgSHl1tY3JVaFC6rK0akhe3_g-D9igxY17WUupoZC9_hBvvw/viewform?usp=header',
         prizes: '₹10,000 PRIZE POOL',
         rules: '5v5 draft pick mode. Emulators strictly prohibited.',
@@ -110,7 +128,7 @@ const creativeEvents = [
       {
         id: 'e2',
         title: 'BGMI',
-        image: '/comic_gaming.png',
+        image: '/bgmi.png',
         link: 'https://docs.google.com/forms/d/e/1FAIpQLSfZb-XSb5g1dk4ZrgbMbCqGV1I6TvfGHW2aSuyOsrVAQBXh2Q/viewform?usp=sharing&ouid=102858058196643049393',
         prizes: '₹10,000 PRIZE POOL',
         rules: 'Squad match. Official maps. No hacks/scripts.',
@@ -118,45 +136,45 @@ const creativeEvents = [
       },
     ]
   },
+  // {
+  //   id: 3,
+  //   title: 'LECTURE SERIES',
+  //   list: 'Technical Sessions\nTech Workshops\nTechnical Seminars',
+  //   bg: '/lecture_series.png',
+  //   exclaim: 'HOW!',
+  //   rotation: '-2deg',
+  //   subEvents: [
+  //     {
+  //       id: 'l1',
+  //       title: 'Technical Sessions',
+  //       image: '/lecture_series.png',
+  //       link: '#',
+  //       prizes: 'KNOWLEDGE & CERTIFICATE',
+  //       rules: 'Open for all attendees. Must register prior to seat filling.',
+  //       process: 'Registration -> Attend Session -> Q&A -> Certificate'
+  //     },
+  //     {
+  //       id: 'l2',
+  //       title: 'Tech Workshops',
+  //       image: '/lecture_series.png',
+  //       link: '#',
+  //       prizes: 'HANDS-ON EXPERIENCE',
+  //       rules: 'Bring your own laptop. Prerequisites must be installed.',
+  //       process: 'Introduction -> Live Coding -> Practical Tasks -> Showcase'
+  //     },
+  //     {
+  //       id: 'l3',
+  //       title: 'Technical Seminars',
+  //       image: '/lecture_series.png',
+  //       link: '#',
+  //       prizes: 'INDUSTRY INSIGHTS',
+  //       rules: 'Audience interaction encouraged. Formals preferred.',
+  //       process: 'Guest Welcome -> Keynote Address -> Panel Discussion -> Networking'
+  //     }
+  //   ]
+  // },
   {
     id: 3,
-    title: 'LECTURE SERIES',
-    list: 'Technical Sessions\nTech Workshops\nTechnical Seminars',
-    bg: '/lecture_series.png',
-    exclaim: 'HOW!',
-    rotation: '-2deg',
-    subEvents: [
-      {
-        id: 'l1',
-        title: 'Technical Sessions',
-        image: '/lecture_series.png',
-        link: '#',
-        prizes: 'KNOWLEDGE & CERTIFICATE',
-        rules: 'Open for all attendees. Must register prior to seat filling.',
-        process: 'Registration -> Attend Session -> Q&A -> Certificate'
-      },
-      {
-        id: 'l2',
-        title: 'Tech Workshops',
-        image: '/lecture_series.png',
-        link: '#',
-        prizes: 'HANDS-ON EXPERIENCE',
-        rules: 'Bring your own laptop. Prerequisites must be installed.',
-        process: 'Introduction -> Live Coding -> Practical Tasks -> Showcase'
-      },
-      {
-        id: 'l3',
-        title: 'Technical Seminars',
-        image: '/lecture_series.png',
-        link: '#',
-        prizes: 'INDUSTRY INSIGHTS',
-        rules: 'Audience interaction encouraged. Formals preferred.',
-        process: 'Guest Welcome -> Keynote Address -> Panel Discussion -> Networking'
-      }
-    ]
-  },
-  {
-    id: 4,
     title: 'FUN EVENTS',
     list: "Chess Master 3x3,\nIPL Mock Auction",
     bg: '/fun_events.png',
@@ -184,7 +202,7 @@ const creativeEvents = [
     ]
   },
   {
-    id: 5,
+    id: 4,
     title: 'KALAKRITI',
     list: 'Short Film, Digital Art',
     bg: '/fun_events.png',
@@ -203,7 +221,7 @@ const creativeEvents = [
       {
         id: 'k2',
         title: 'Digital Art',
-        image: '/comic_uiux.png',
+        image: '/digital_art.png',
         link: 'https://docs.google.com/forms/d/e/1FAIpQLSdRtivMkleBqFeIxGa9SrEwjlt01iJQrziijnP46buaQKVt3g/viewform?usp=sharing&ouid=102858058196643049393',
         prizes: 'Winner:₹2,000 | Runner-up:₹1,000',
         rules: 'Theme: Cinematic Tech. Originals only.',
@@ -219,8 +237,8 @@ const committeeMembers = [
     role: "Event Leads",
     color: "red",
     members: [
-      { name: "Kaushik Hazarika", github: "#", linkedin: "#", insta: "#", photo: "/committee_picture/kaushik_hazarika.jpg" },
-      { name: "Gyan Ankur Das", github: "#", linkedin: "https://www.linkedin.com/in/gyan-ankur-das-aaa900230?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", insta: "https://instagram.com/__.gyan_ankur_das.__", photo: "/committee_picture/IMG-20260329-WA0004 - Gyan Ankur Das.jpg" }
+      { name: "Kaushik Hazarika", linkedin: "#", insta: "#", photo: "/committee_picture/kaushik_hazarika.jpg" },
+      { name: "Gyan Ankur Das", linkedin: "https://www.linkedin.com/in/gyan-ankur-das-aaa900230?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", insta: "https://instagram.com/__.gyan_ankur_das.__", photo: "/committee_picture/IMG-20260329-WA0004 - Gyan Ankur Das.jpg" }
     ]
   },
   {
@@ -228,8 +246,8 @@ const committeeMembers = [
     role: "Event Coordinator",
     color: "blue",
     members: [
-      { name: "Priyam Basistha", github: "#", linkedin: "https://www.linkedin.com/in/priyambasistha", insta: "https://instagram.com/pr_ba_03", photo: "/committee_picture/IMG-20260329-WA0064 - Priyam Basistha.jpg" },
-      { name: "Baidurjya Bharadwaz", github: "#", linkedin: "https://www.linkedin.com/in/baidurjya-bharadwaz-278240292", insta: "https://instagram.com/im_shershah", photo: "/committee_picture/IMG-20260329-WA0002 - Baidurjya Bharadwaz.jpg" },
+      { name: "Priyam Basistha", linkedin: "https://www.linkedin.com/in/priyambasistha", insta: "https://instagram.com/pr_ba_03", photo: "/committee_picture/IMG-20260329-WA0064 - Priyam Basistha.jpg" },
+      { name: "Baidurjya Bharadwaz", linkedin: "https://www.linkedin.com/in/baidurjya-bharadwaz-278240292", insta: "https://instagram.com/im_shershah", photo: "/committee_picture/IMG-20260329-WA0002 - Baidurjya Bharadwaz.jpg" },
       // { name: "Rishikul Borah", github: "#", linkedin: "https://www.linkedin.com/in/rishikul-borah-1706ab299?utm_source=share_via&utm_content=profile&utm_medium=member_android", insta: "https://www.instagram.com/rishi_kul_borah?igsh=ZnpqenJtNm92Z3B4", photo: "/committee_picture/IMG_20260112_163619481_HDR - Rishikul Borah.jpg" }
     ]
   },
@@ -238,9 +256,9 @@ const committeeMembers = [
     role: "Technology Team",
     color: "blue",
     members: [
-      { name: "Tinku Moni Kaushik", github: "#", linkedin: "https://www.linkedin.com/in/tinku-kaushik", insta: "https://www.instagram.com/tinku.kaushik_?igsh=bTJhZGJzdWFyZHZ6", photo: "/committee_picture/tinku_moni_kaushik.jpg" },
-      { name: "Aryan Mitra", github: "#", linkedin: "https://www.linkedin.com/in/aryan-mitra-472457295?utm_source=share_via&utm_content=profile&utm_medium=member_android", insta: "https://www.instagram.com/_absurd_28?utm_source=qr&igsh=MXgxcWl0dG5la2I3dQ==", photo: "/committee_picture/aryan_mitra.jpg" },
-      { name: "Ricky Kashyap", github: "#", linkedin: "https://www.linkedin.com/in/ricky-kashyap-7b776723a/", insta: "https://instagram.com/PRINCELUCIFER9669", photo: "/committee_picture/IMG_20250212_172400205 - Ricky Kashyap.jpg" }
+      { name: "Tinku Moni Kaushik", linkedin: "https://www.linkedin.com/in/tinku-kaushik", insta: "https://www.instagram.com/tinku.kaushik_?igsh=bTJhZGJzdWFyZHZ6", photo: "/committee_picture/tinku_moni_kaushik.jpg" },
+      { name: "Aryan Mitra", linkedin: "https://www.linkedin.com/in/aryan-mitra-472457295?utm_source=share_via&utm_content=profile&utm_medium=member_android", insta: "https://www.instagram.com/_absurd_28?utm_source=qr&igsh=MXgxcWl0dG5la2I3dQ==", photo: "/committee_picture/aryan_mitra.jpg" },
+      { name: "Ricky Kashyap", linkedin: "https://www.linkedin.com/in/ricky-kashyap-7b776723a/", insta: "https://instagram.com/PRINCELUCIFER9669", photo: "/committee_picture/IMG_20250212_172400205 - Ricky Kashyap.jpg" }
     ]
   },
   {
@@ -248,8 +266,8 @@ const committeeMembers = [
     role: "Budgeting & Finance",
     color: "yellow",
     members: [
-      { name: "Jyotirmoy Das", github: "#", linkedin: "https://www.linkedin.com/in/jdas4/", insta: "https://instagram.com/jyotirmoy.d04", photo: "/committee_picture/oie_1bFSAUA0N3R6 - Jyotirmoy Das.png" },
-      { name: "Waheed Asraf", github: "#", linkedin: "https://in.linkedin.com/in/waheed-asraf-97700128a", insta: "https://instagram.com/waheed.arc", photo: "/committee_picture/waheed_asraf.jpg" }
+      { name: "Jyotirmoy Das", linkedin: "https://www.linkedin.com/in/jdas4/", insta: "https://instagram.com/jyotirmoy.d04", photo: "/committee_picture/oie_1bFSAUA0N3R6 - Jyotirmoy Das.png" },
+      { name: "Waheed Asraf", linkedin: "https://in.linkedin.com/in/waheed-asraf-97700128a", insta: "https://instagram.com/waheed.arc", photo: "/committee_picture/waheed_asraf.jpg" }
     ]
   },
   {
@@ -257,9 +275,9 @@ const committeeMembers = [
     role: "Marketing & PR + Design",
     color: "red",
     members: [
-      { name: "Anushuya Paul", github: "#", linkedin: "#", insta: "https://instagram.com/anushuyagghhh", photo: "/committee_picture/IMG-20250929-WA0068 - Anushuya Paul.jpg" },
-      { name: "Anwesha Choudhury", github: "#", linkedin: "https://www.linkedin.com/in/anwesha-chaudhury-67a050292", insta: "https://instagram.com/___anwesha_is_ded___", photo: "/committee_picture/IMG-20250716-WA0001(1)~2 - Anwesha Chaudhury.jpg " },
-      { name: "Abinash Sarmah", github: "#", linkedin: "https://www.linkedin.com/in/abinash-sarmah-46718124b?utm_source=share_via&utm_content=profile&utm_medium=member_android", insta: "https://instagram.com/abinashsarmah16", photo: "/committee_picture/IMG-20260329-WA0004 - Abinash Sarmah.jpg" }
+      { name: "Anushuya Paul", linkedin: "#", insta: "https://instagram.com/anushuyagghhh", photo: "/committee_picture/IMG-20250929-WA0068 - Anushuya Paul.jpg" },
+      { name: "Anwesha Choudhury", linkedin: "https://www.linkedin.com/in/anwesha-chaudhury-67a050292", insta: "https://instagram.com/___anwesha_is_ded___", photo: "/committee_picture/IMG-20250716-WA0001(1)~2 - Anwesha Chaudhury.jpg " },
+      { name: "Abinash Sarmah", linkedin: "https://www.linkedin.com/in/abinash-sarmah-46718124b?utm_source=share_via&utm_content=profile&utm_medium=member_android", insta: "https://instagram.com/abinashsarmah16", photo: "/committee_picture/IMG-20260329-WA0004 - Abinash Sarmah.jpg" }
     ]
   },
   {
@@ -267,9 +285,9 @@ const committeeMembers = [
     role: "Attendee Engagement",
     color: "yellow",
     members: [
-      { name: "Bedanta Sarma", github: "#", linkedin: "#", insta: "https://instagram.com/bedanta._xsr", photo: "/committee_picture/IMG-20260304-WA0208 - bedanta sarma.jpg" },
-      { name: "Abhishek Kumar Prasad", github: "#", linkedin: "https://www.linkedin.com/in/abhishek-kumar-prasad-512568298?utm_source=share_via&utm_content=profile&utm_medium=member_ios", insta: "https://instagram.com/abhiissshhek_", photo: "/committee_picture/abhishek_kumar-prasad.jpg" },
-      { name: "Manash Jyoti Thakuria", github: "#", linkedin: "https://www.linkedin.com/in/manash-thakuria-b8a29628b", insta: "https://instagram.com/__m_a_n_a_s_h____", photo: "/committee_picture/IMG_20260329_130513 - Manash Thakuria.jpg" }
+      { name: "Bedanta Sarma", linkedin: "#", insta: "https://instagram.com/bedanta._xsr", photo: "/committee_picture/IMG-20260304-WA0208 - bedanta sarma.jpg" },
+      { name: "Abhishek Kumar Prasad", linkedin: "https://www.linkedin.com/in/abhishek-kumar-prasad-512568298?utm_source=share_via&utm_content=profile&utm_medium=member_ios", insta: "https://instagram.com/abhiissshhek_", photo: "/committee_picture/abhishek_kumar-prasad.jpg" },
+      { name: "Manash Jyoti Thakuria", linkedin: "https://www.linkedin.com/in/manash-thakuria-b8a29628b", insta: "https://instagram.com/__m_a_n_a_s_h____", photo: "/committee_picture/IMG_20260329_130513 - Manash Thakuria.jpg" }
     ]
   },
   {
@@ -277,8 +295,8 @@ const committeeMembers = [
     role: "Fooding",
     color: "red",
     members: [
-      { name: "Bitopan Sarmah", github: "#", linkedin: "#", insta: "#" },
-      { name: "Rudra Upadhyaya", github: "#", linkedin: "https://www.linkedin.com/in/rudra-upadhyaya-235788217/", insta: "https://instagram.com/upadhyaya_rudra56", photo: "/committee_picture/IMG_4544 - Rudra Upadhyaya.jpeg" }
+      { name: "Bitopan Sarmah", linkedin: "#", insta: "#" },
+      { name: "Rudra Upadhyaya", linkedin: "https://www.linkedin.com/in/rudra-upadhyaya-235788217/", insta: "https://instagram.com/upadhyaya_rudra56", photo: "/committee_picture/IMG_4544 - Rudra Upadhyaya.jpeg" }
     ]
   },
   {
@@ -286,7 +304,7 @@ const committeeMembers = [
     role: "Sponsorship",
     color: "blue",
     members: [
-      { name: "Simanta Sarma", github: "#", linkedin: "https://www.linkedin.com/in/simantasarma1", insta: "https://instagram.com/unstoppable.exe", photo: "/committee_picture/simanta_sarma.jpg" }
+      { name: "Simanta Sarma", linkedin: "https://www.linkedin.com/in/simantasarma1", insta: "https://instagram.com/unstoppable.exe", photo: "/committee_picture/simanta_sarma.jpg" }
     ]
   },
   {
@@ -294,9 +312,9 @@ const committeeMembers = [
     role: "Merchandise",
     color: "yellow",
     members: [
-      { name: "Birochan Das", github: "#", linkedin: "#", insta: "https://instagram.com/__biru__09", photo: "/committee_picture/BIRU - Birochan Das.jpeg" },
-      { name: "Rudra Upadhyaya", github: "#", linkedin: "https://www.linkedin.com/in/rudra-upadhyaya-235788217/", insta: "https://instagram.com/upadhyaya_rudra56", photo: "/committee_picture/IMG_4544 - Rudra Upadhyaya.jpeg" },
-      { name: "Aritram Dutta", github: "#", linkedin: "#", insta: "#" }
+      { name: "Birochan Das", linkedin: "#", insta: "https://instagram.com/__biru__09", photo: "/committee_picture/BIRU - Birochan Das.jpeg" },
+      { name: "Rudra Upadhyaya", linkedin: "https://www.linkedin.com/in/rudra-upadhyaya-235788217/", insta: "https://instagram.com/upadhyaya_rudra56", photo: "/committee_picture/IMG_4544 - Rudra Upadhyaya.jpeg" },
+      { name: "Aritram Dutta", linkedin: "#", insta: "#" }
     ]
   }
 ];
@@ -306,14 +324,23 @@ const merch = [
   {
     title: 'HACKDAYS 4.0 REGULAR FIT',
     originalPrice: '₹499',
-    price: '₹429',
+    price: '₹389',
     image: '/tshirt_new2.jpeg',
     backImage: '/tshirt_new.jpeg',
     color: 'black',
     urgency: 'FOR FIRST 50 CUSTOMERS ONLY!',
-    discount: '15% OFF'
+    discount: '27% OFF'
   },
-
+  {
+    title: 'HACKDAYS 4.0 OVERSIZED FIT',
+    originalPrice: '₹599',
+    price: '₹439',
+    image: '/oversized.png',
+    backImage: '/oversized2.png',
+    color: 'black',
+    urgency: 'FOR FIRST 50 CUSTOMERS ONLY!',
+    discount: '15% OFF'
+  }
 ];
 
 // Multiverse Gallery Assets
@@ -344,7 +371,7 @@ const leadership = [
     name: 'PROF. SHIKHAR KUMAR SARMA',
     role: 'DEAN OF TECH // HOD, IT',
     msg: '"Hackdays 4.0 represents our commitment to fostering innovation and technical excellence. This event brings together the brightest minds to create, compete, and collaborate."',
-    portrait: '/shikhar_sarma.jpg',
+    portrait: '/sikhar.jpg',
     clearance: 'LEVEL 10 CLEARANCE',
     id: 'GU_IT_DIRECTOR_01'
   },
@@ -352,7 +379,7 @@ const leadership = [
     name: 'DR. RUPAM BHATTACHARYYA',
     role: 'FACULTY ADVISOR // ASST. PROF',
     msg: '"Our goal is to provide a platform where students can showcase their skills, learn from peers, and push the boundaries of what’s possible in technology."',
-    portrait: '/rupam_b.jpg',
+    portrait: '/rupam2.jpg',
     clearance: 'ALPHA CLEARANCE',
     id: 'GU_IT_ADVISOR_02'
   }
@@ -429,14 +456,14 @@ function App() {
       const isToggle = e.target.closest('.villain-toggle');
       const isGame = e.target.closest('.bug-hunter-container');
 
-      if (!isTerminal && !isToggle && !isGame) {
-        if (!window._starkAudio) {
-          window._starkAudio = new Audio("/Voicy_At Your Service Sir.mp3");
-          window._starkAudio.volume = 0.4;
-        }
-        window._starkAudio.currentTime = 0;
-        window._starkAudio.play().catch(() => { });
-      }
+      // if (!isTerminal && !isToggle && !isGame) {
+      //   if (!window._starkAudio) {
+      //     window._starkAudio = new Audio("/Voicy_At Your Service Sir.mp3");
+      //     window._starkAudio.volume = 0.4;
+      //   }
+      //   window._starkAudio.currentTime = 0;
+      //   window._starkAudio.play().catch(() => { });
+      // }
     };
 
     window.addEventListener('click', handleGlobalClick);
@@ -695,74 +722,7 @@ function App() {
     }
   }, [videoStarted]);
 
-  // Custom Spider-Man Mask Global Cursor
-  useEffect(() => {
-    if (isTouchDevice || isMobile) {
-      const existing = document.getElementById('comic-cursor-override');
-      if (existing) existing.remove();
-      return;
-    }
-    const img = new Image();
 
-    img.src = '/cursor.png';
-    img.crossOrigin = "Anonymous";
-    img.onload = () => {
-      const size = 32;
-      const canvasSize = 48; // Extrusion padding
-      const canvas = document.createElement('canvas');
-      canvas.width = canvasSize;
-      canvas.height = canvasSize;
-      const ctx = canvas.getContext('2d');
-
-      const tempCanvas = document.createElement('canvas');
-      tempCanvas.width = size;
-      tempCanvas.height = size;
-      const tempCtx = tempCanvas.getContext('2d');
-      tempCtx.drawImage(img, 0, 0, size, size);
-
-      const imageData = tempCtx.getImageData(0, 0, size, size);
-      const data = imageData.data;
-
-      const bgR = data[0], bgG = data[1], bgB = data[2];
-
-      for (let i = 0; i < data.length; i += 4) {
-        // Drop any color mirroring the top-left background pixel natively into Transparency
-        if (Math.abs(data[i] - bgR) < 40 && Math.abs(data[i + 1] - bgG) < 40 && Math.abs(data[i + 2] - bgB) < 40) {
-          data[i + 3] = 0;
-        }
-      }
-      tempCtx.putImageData(imageData, 0, 0);
-
-      // Paint Comic Shadow behind
-      for (let i = 1; i <= 3; i++) {
-        ctx.drawImage(tempCanvas, i, i);
-      }
-      ctx.globalCompositeOperation = 'source-in';
-      ctx.fillStyle = '#000000';
-      ctx.fillRect(0, 0, canvasSize, canvasSize);
-
-      // Paint Spidey 
-      ctx.globalCompositeOperation = 'source-over';
-      ctx.drawImage(tempCanvas, 0, 0);
-
-      const dataUrl = canvas.toDataURL('image/png');
-
-      const style = document.createElement('style');
-      style.id = "comic-cursor-override";
-      style.innerHTML = `
-        * { cursor: url('${dataUrl}') 16 16, auto !important; }
-        button, a, .nav-btn, .btn-hero, .comic-button, .creative-event-card {
-          cursor: url('${dataUrl}') 16 16, pointer !important;
-        }
-      `;
-
-      // Cleanup previous run if exists
-      const existing = document.getElementById('comic-cursor-override');
-      if (existing) existing.remove();
-
-      document.head.appendChild(style);
-    };
-  }, []);
   if (isLoading) {
     return (
       <div className="loader-screen" style={{ backgroundColor: '#000', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -792,40 +752,42 @@ function App() {
       <SpeedLines scrollY={scrollY} />
 
       {/* Professional 'Utility Belt' Navbar */}
-      {isMobile ? (
-        <MobileAppNav
-          activeSection={activeSection || 'home'}
-          onNavigate={(id) => {
-            scrollToSection(id);
-            setActiveSection(id);
-          }}
-          onToggleTerminal={() => setSecretUnlocked(true)}
-          isVillainMode={isVillainMode}
-          onToggleMode={toggleVillain}
-          onToggleComms={() => setCommsOverlayOpen(true)}
-        />
-      ) : (
+      {!(activeCategory || selectedSubEvent) && (
+        isMobile ? (
+          <MobileAppNav
+            activeSection={activeSection || 'home'}
+            onNavigate={(id) => {
+              scrollToSection(id);
+              setActiveSection(id);
+            }}
+            onToggleTerminal={() => setSecretUnlocked(true)}
+            isVillainMode={isVillainMode}
+            onToggleMode={toggleVillain}
+            onToggleComms={() => setCommsOverlayOpen(true)}
+          />
+        ) : (
 
 
 
 
-        <div className={`nav-container-fixed utility-belt-nav ${isVillainMode ? 'villain-mode' : ''} ${isGlitching ? 'crt-glitch' : ''} ${scrollY > 50 ? 'navbar-scrolled' : ''}`}>
-          <div className="nav-logo">HACKDAYS 4.0</div>
-          <div className="nav-links">
-            {['HOME', 'EVENTS', 'SPONSORS', 'COMMITTEE', 'MERCH'].map(item => (
-              <button
-                key={item} className="nav-btn"
-                onClick={() => scrollToSection(item.toLowerCase())}
-                onMouseEnter={() => setCursorHover(true)} onMouseLeave={() => setCursorHover(false)}
-              >
-                {item}
+          <div className={`nav-container-fixed utility-belt-nav ${isVillainMode ? 'villain-mode' : ''} ${isGlitching ? 'crt-glitch' : ''} ${scrollY > 50 ? 'navbar-scrolled' : ''}`}>
+            <div className="nav-logo">HACKDAYS 4.0</div>
+            <div className="nav-links">
+              {['HOME', 'EVENTS', 'SPONSORS', 'COMMITTEE', 'MERCH'].map(item => (
+                <button
+                  key={item} className="nav-btn"
+                  onClick={() => scrollToSection(item.toLowerCase())}
+                  onMouseEnter={() => setCursorHover(true)} onMouseLeave={() => setCursorHover(false)}
+                >
+                  {item}
+                </button>
+              ))}
+              <button className="nav-btn villain-toggle" onClick={toggleVillain} onMouseEnter={() => setCursorHover(true)} onMouseLeave={() => setCursorHover(false)}>
+                {isVillainMode ? '🦸 HERO MODE' : '🦹 VILLAIN MODE'}
               </button>
-            ))}
-            <button className="nav-btn villain-toggle" onClick={toggleVillain} onMouseEnter={() => setCursorHover(true)} onMouseLeave={() => setCursorHover(false)}>
-              {isVillainMode ? '🦸 HERO MODE' : '🦹 VILLAIN MODE'}
-            </button>
+            </div>
           </div>
-        </div>
+        )
       )}
 
       <div className={`app-container ${isVillainMode ? 'villain-mode' : ''} ${isGlitching ? 'crt-glitch' : ''} ${fadeIn ? 'fade-in-from-black' : ''}`}>
@@ -962,6 +924,54 @@ function App() {
           </div>
         </section>
 
+        {/* Merch Marquee */}
+        <div className="marquee-container" style={{ background: '#e62429', color: '#fff' }}>
+          <div className="marquee-content" style={{ animationDuration: '25s' }}>
+            * GET YOUR AWESOME MERCH * EXCLUSIVE DESIGNS * LIMITED EDITION * GET YOUR AWESOME MERCH * EXCLUSIVE DESIGNS * LIMITED EDITION *&nbsp;
+          </div>
+          <div className="marquee-content" style={{ animationDuration: '25s' }}>
+            * GET YOUR AWESOME MERCH * EXCLUSIVE DESIGNS * LIMITED EDITION * GET YOUR AWESOME MERCH * EXCLUSIVE DESIGNS * LIMITED EDITION *&nbsp;
+          </div>
+        </div>
+
+        {/* Merch Store */}
+        <section id="merch" className="marvel-section">
+          <div className="section-bg-layer bg-marvel-yellow"></div>
+          <div className="container" style={{ position: 'relative', zIndex: 5 }}>
+            <div className="section-title">
+              <h2 style={{ background: '#fff' }}>MERCH STORE</h2>
+            </div>
+
+            <div className="merch-items-grid">
+              {merch.map((item, idx) => (
+                <div key={idx} className="comic-box merch-card stable-card" style={{ flex: '1 0 320px' }}>
+                  <div className="merch-top-interactive group" style={{ minHeight: '380px' }}>
+                    {/* Image Swap Layer */}
+                    <div className="merch-img-container">
+                      <img src={item.image} alt={item.title} className="merch-img front-img" loading="lazy" />
+                      <img src={item.backImage} alt={`${item.title} Back`} className="merch-img back-img" loading="lazy" />
+                    </div>
+
+                    {/* Labels should stay on top of the image but stable */}
+                    <div className={`urgency-banner`}>{item.urgency}</div>
+                    <div className="discount-tag">{item.discount}</div>
+                    <div className="reveal-hint-overlay">REVEALING BACKSIDE...</div>
+                  </div>
+
+                  <div className="merch-bottom">
+                    <h4>{item.title}</h4>
+                    <div className="price-container">
+                      <span className="original-price">{item.originalPrice}</span>
+                      <span className="price">{item.price}</span>
+                    </div>
+                    <a href='https://docs.google.com/forms/d/e/1FAIpQLScwF_1m1UZg2CBN7yHwR0wR20Gy2ZHzEd4GVTQ3ardQZADcmg/viewform?usp=header' target="_blank" rel="noopener noreferrer"> <button className="comic-button btn-red" style={{ width: '100%' }}>BUY NOW</button></a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* S.H.I.E.L.D. Leadership Dossiers */}
         <section id="leadership" className="marvel-section">
           <div className="section-bg-layer bg-stark-blueprint"></div>
@@ -1033,17 +1043,17 @@ function App() {
               ))}
             </div>
 
-            <div className="feedback-cta-container">
+            {/* <div className="feedback-cta-container">
               <MagneticButton className="comic-button yellow large-btn btn-hero" onClick={() => {
                 new Audio("/Voicy_At Your Service Sir.mp3").play().catch(e => console.log(e));
                 alert("TRANSMITTING YOUR STORY TO HQ...");
               }}>JOIN THE LEGACY! SHARE YOUR STORY</MagneticButton>
-            </div>
+            </div> */}
           </div>
         </section>
 
         {/* DANGER ZONE - SYSTEM COMPROMISED */}
-        <section className="danger-zone-parallax">
+        {/* <section className="danger-zone-parallax">
           <div className="danger-alert-tape">
             <span>DANGER - BUGS DETECTED - DANGER - BUGS DETECTED - DANGER - BUGS DETECTED</span>
             <span>DANGER - BUGS DETECTED - DANGER - BUGS DETECTED - DANGER - BUGS DETECTED</span>
@@ -1071,66 +1081,9 @@ function App() {
             <span>SYSTEM BREACH - HERO REQUIRED - SYSTEM BREACH - HERO REQUIRED - SYSTEM BREACH</span>
             <span>SYSTEM BREACH - HERO REQUIRED - SYSTEM BREACH - HERO REQUIRED - SYSTEM BREACH</span>
           </div>
-        </section>
+        </section> */}
 
-        {/* Committee Section - Consolidated Marvel Panel Layout */}
-        <section id="committee" className="marvel-section">
-          <div className="section-bg-layer bg-comic-grid"></div>
-          <div className="container" style={{ position: 'relative', zIndex: 5 }}>
-            <div className="section-title red">
-              <h2>THE ASSEMBLED TEAM</h2>
-              <div className="action-bubble bubble-zap" style={{ top: '-40px', right: '-20px' }}>ASSEMBLE!</div>
-            </div>
 
-            <div className="committee-panel-grid">
-              {committeeMembers.map((group, gIdx) => (
-                <div key={gIdx} className={`committee-division-panel panel-${group.color} comic-box`}>
-                  <div className="panel-header">
-                    <span className="division-slug">{group.division}</span>
-                    <h3 className="division-role">{group.role}</h3>
-                  </div>
-                  <div className="members-list">
-                    {group.members.map((m, mIdx) => (
-                      <div key={mIdx} className="member-item group relative">
-                        <div className="member-info">
-                          <span className="member-name">{m.name}</span>
-
-                          {/* Creative Character Intel Pop-over */}
-                          {m.photo && (
-                            <div className="character-popover">
-                              <div className="comic-intel-card">
-                                <div className="intel-header">CHARACTER DATA: {group.division}</div>
-                                <div className="intel-image-frame dot-matrix">
-                                  <img src={m.photo} alt={m.name} loading="lazy" />
-                                  <div className="onomatopoeia-zap">ZAP!</div>
-                                </div>
-                                <div className="intel-footer">
-                                  <span className="intel-name">{m.name}</span>
-                                  <div className="intel-stats">
-                                    <div className="stat-label">SKILL_RANK</div>
-                                    <div className="stat-bar"><div className="stat-fill" style={{ width: '94%' }}></div></div>
-                                    <div className="stat-label">ENERGY_LEVEL</div>
-                                    <div className="stat-bar"><div className="stat-fill" style={{ width: '88%' }}></div></div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          )}
-                        </div>
-                        <div className="member-socials">
-                          <a href={m.github} target="_blank" rel="noreferrer" className="social-icon github"><Code size={16} title="Github" /></a>
-                          <a href={m.linkedin} target="_blank" rel="noreferrer" className="social-icon linkedin"><Globe size={16} title="LinkedIn" /></a>
-                          <a href={m.insta} target="_blank" rel="noreferrer" className="social-icon insta"><Camera size={16} title="Instagram" /></a>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="panel-pop-label">HD 4.0</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
 
         {/* Sponsors Section */}
@@ -1239,7 +1192,7 @@ function App() {
 
             {/* HACKATHON CATEGORY */}
             <div className="gallery-category-header">
-              <div className="comic-label-tag">[ THE HACKATHONS ]</div>
+              <div className="comic-label-tag">[ THE HACKATHON ]</div>
             </div>
             <div className="gallery-masonry-grid mb-16">
               {galleryPhotos.filter(p => p.category === 'hackathon').map(photo => (
@@ -1306,41 +1259,27 @@ function App() {
             </motion.div>
           )}
         </AnimatePresence>
-
-
-        {/* Merch Marquee */}
-        <div className="marquee-container" style={{ background: '#e62429', color: '#fff' }}>
-          <div className="marquee-content" style={{ animationDuration: '25s' }}>
-            * GET YOUR AWESOME MERCH * EXCLUSIVE DESIGNS * LIMITED EDITION * GET YOUR AWESOME MERCH * EXCLUSIVE DESIGNS * LIMITED EDITION *&nbsp;
-          </div>
-          <div className="marquee-content" style={{ animationDuration: '25s' }}>
-            * GET YOUR AWESOME MERCH * EXCLUSIVE DESIGNS * LIMITED EDITION * GET YOUR AWESOME MERCH * EXCLUSIVE DESIGNS * LIMITED EDITION *&nbsp;
-          </div>
-        </div>
-
-        {/* Merch Store */}
-        <section id="merch" className="marvel-section">
-          <div className="section-bg-layer bg-marvel-yellow"></div>
+        {/* Committee Section - Consolidated Marvel Panel Layout */}
+        <section id="committee" className="marvel-section">
+          <div className="section-bg-layer bg-comic-grid"></div>
           <div className="container" style={{ position: 'relative', zIndex: 5 }}>
-            <div className="section-title">
-              <h2 style={{ background: '#fff' }}>MERCH STORE</h2>
+            <div className="section-title red">
+              <h2>THE ASSEMBLED TEAM</h2>
+              <div className="action-bubble bubble-zap" style={{ top: '-40px', right: '-20px' }}>ASSEMBLE!</div>
             </div>
 
-            <div className="merch-items-grid">
-              {merch.map((item, idx) => (
-                <div key={idx} className="comic-box merch-card stable-card" style={{ flex: '1 0 320px' }}>
-                  <div className="merch-top-interactive group" style={{ minHeight: '380px' }}>
-                    {/* Image Swap Layer */}
-                    <div className="merch-img-container">
-                      <img src={item.image} alt={item.title} className="merch-img front-img" loading="lazy" />
-                      <img src={item.backImage} alt={`${item.title} Back`} className="merch-img back-img" loading="lazy" />
-                    </div>
-
-                    {/* Labels should stay on top of the image but stable */}
-                    <div className={`urgency-banner`}>{item.urgency}</div>
-                    <div className="discount-tag">{item.discount}</div>
-                    <div className="reveal-hint-overlay">REVEALING BACKSIDE...</div>
+            <div className="committee-panel-grid">
+              {committeeMembers.map((group, gIdx) => (
+                <div key={gIdx} className={`committee-division-panel panel-${group.color} comic-box`}>
+                  <div className="panel-header">
+                    <span className="division-slug">{group.division}</span>
+                    <h3 className="division-role">{group.role}</h3>
                   </div>
+                  <div className="members-list">
+                    {group.members.map((m, mIdx) => (
+                      <div key={mIdx} className="member-item group relative">
+                        <div className="member-info">
+                          <span className="member-name">{m.name}</span>
 
                   <div className="merch-bottom">
                     <h4>{item.title}</h4>
@@ -1350,11 +1289,15 @@ function App() {
                     </div>
                     <a href='https://docs.google.com/forms/d/e/1FAIpQLScwF_1m1UZg2CBN7yHwR0wR20Gy2ZHzEd4GVTQ3ardQZADcmg/viewform?usp=header' target="_blank" rel="noopener noreferrer"> <button className="comic-button btn-red" style={{ width: '100%' }}>BUY NOW</button></a>
                   </div>
+                  <div className="panel-pop-label">HD 4.0</div>
                 </div>
               ))}
             </div>
           </div>
         </section>
+
+
+
 
         {/* Footer */}
         <footer className="marvel-section">
@@ -1651,11 +1594,11 @@ function App() {
                     <h4>{sub.title}</h4>
                     <div className="sub-event-actions">
                       <button className="comic-button yellow btn-small" onClick={() => {
-                        new Audio("/Voicy_At Your Service Sir.mp3").play().catch(e => console.log(e));
+                        // new Audio("/Voicy_At Your Service Sir.mp3").play().catch(e => console.log(e));
                         setSelectedSubEvent(sub);
                       }}>VIEW INTEL</button>
                       <a href={sub.link} target="_blank" rel="noreferrer" className="comic-button red btn-small" onClick={() => {
-                        new Audio("/Voicy_At Your Service Sir.mp3").play().catch(e => console.log(e));
+                        // new Audio("/Voicy_At Your Service Sir.mp3").play().catch(e => console.log(e));
                       }}>REGISTER</a>
                     </div>
                   </div>
@@ -1720,7 +1663,7 @@ function App() {
                 <div className="dossier-footer">
                   <button className="comic-button red" onClick={() => setSelectedSubEvent(null)}>ABORT MISSION</button>
                   <a href={selectedSubEvent.link} target="_blank" rel="noreferrer" className="comic-button yellow" onClick={() => {
-                    new Audio("/Voicy_At Your Service Sir.mp3").play().catch(e => console.log(e));
+                    // new Audio("/Voicy_At Your Service Sir.mp3").play().catch(e => console.log(e));
                   }}>EXECUTE REGISTRATION</a>
                 </div>
               </div>
