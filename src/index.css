@@ -100,7 +100,13 @@ body {
   box-sizing: border-box;
 }
 
-
+/* Custom Targeting Reticle replacing all default cursors */
+body,
+button,
+a,
+* {
+  cursor: none !important;
+}
 
 .custom-cursor {
   position: fixed;
