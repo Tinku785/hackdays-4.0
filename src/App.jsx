@@ -81,7 +81,7 @@ const creativeEvents = [
       },
       {
         id: 't7',
-        title: 'Brainy Bowl',
+        title: 'Tech Quiz',
         image: '/quiz_event.png',
         link: 'https://docs.google.com/forms/d/e/1FAIpQLSe1b3cFVmnGWyQjou_APB8GB0Q3UAOB_uEQ5R3h_OTvdhLpJg/viewform?usp=sharing&ouid=102858058196643049393',
         prizes: '₹2,000',
@@ -314,7 +314,7 @@ const committeeMembers = [
     members: [
       { name: "Birochan Das", linkedin: "#", insta: "https://instagram.com/__biru__09", photo: "/committee_picture/BIRU - Birochan Das.jpeg" },
       { name: "Rudra Upadhyaya", linkedin: "https://www.linkedin.com/in/rudra-upadhyaya-235788217/", insta: "https://instagram.com/upadhyaya_rudra56", photo: "/committee_picture/IMG_4544 - Rudra Upadhyaya.jpeg" },
-      { name: "Aritram Dutta", linkedin: "https://www.linkedin.com/in/aritram-dutta-1189b4205?utm_source=share_via&utm_content=profile&utm_medium=member_android", insta: "https://www.instagram.com/aritram__?igsh=MXQ2cXFkaGpsem9zZA==" }
+      { name: "Aritram Dutta", linkedin: "#", insta: "#" }
     ]
   }
 ];
