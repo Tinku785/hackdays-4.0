@@ -224,8 +224,8 @@ const creativeEvents = [
         image: '/digital_art.png',
         link: 'https://docs.google.com/forms/d/e/1FAIpQLSdRtivMkleBqFeIxGa9SrEwjlt01iJQrziijnP46buaQKVt3g/viewform?usp=sharing&ouid=102858058196643049393',
         prizes: 'Winner:₹2,000 | Runner-up:₹1,000',
-        rules: 'Theme: Cinematic Tech. Originals only.',
-        process: 'Register -> Concept -> Submission -> Screening'
+        rules: 'Open to all college/university students. Submission must be original and theme-based. File format: PNG (Max size: 10MB). Rename file as: YourName_CollegeName. Any digital tools allowed (No AI usage). Judging: creativity, originality, relevance. No offensive/inappropriate content. Judges’ decision is final',
+        process: 'Online → Topic Reveal (2 Days Prior) → Pre-Submission (1st May | Before 12 PM) → Screening'
       }
     ]
   }
@@ -1113,19 +1113,28 @@ function App() {
               <div style={{ textAlign: 'center' }}>
                 <h3>PARTNERS & COLLABORATORS</h3>
               </div>
+
               <div className="sponsor-boxes">
                 <div className="sponsor-box small">
                   <img src="/.xyz.png" alt=".XYZ Domain" className="sponsor-logo" />
                   <span className="sponsor-name">.xyz (Domain Partner)</span>
                 </div>
-                <div className="sponsor-box small">
-                  <img src="/web3assam_logo.jpg" alt="Web3Assam" className="sponsor-logo" />
-                  <span className="sponsor-name">Web3Assam (Community Partner)</span>
-                </div>
+                <a href="https://www.instagram.com/creativlok_llp/" target="_blank" rel="noopener noreferrer">
+                  <div className="sponsor-box small">
+                    <img src="/CreativLok.png" alt="CreativLok" className="sponsor-logo" />
+                    <span className="sponsor-name">CreativLok (Hiring Partner)</span>
+                  </div>
+                </a>
                 <div className="sponsor-box small">
                   <img src="/frint.webp" alt="Frint.in" className="sponsor-logo" />
                   <span className="sponsor-name">Frint.in (Hiring Partner)</span>
                 </div>
+
+                <div className="sponsor-box small">
+                  <img src="/web3assam_logo.jpg" alt="Web3Assam" className="sponsor-logo" />
+                  <span className="sponsor-name">Web3Assam (Community Partner)</span>
+                </div>
+
                 <div className="sponsor-box small">
                   <img src="/api_community.jpg" alt="The API Community" className="sponsor-logo" />
                   <span className="sponsor-name">The API Community (Community Partner)</span>
