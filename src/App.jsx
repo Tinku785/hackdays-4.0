@@ -66,7 +66,7 @@ const creativeEvents = [
         title: 'UI/UX Designing',
         image: '/comic_uiux.png',
         link: 'https://forms.gle/oQeV28VeQmxcwKK97',
-        prizes: 'Winner: ₹2000 + goodies | Runner-up: ₹1000 + goodies',
+        prizes: 'Winner: ₹3000 | Runner-up: ₹1000',
         rules: 'Figma/AdobeXD only. Topic given on spot. 3 hours duration.',
         process: 'Briefing -> Wireframing -> Hi-Fi Design -> Presentation'
       },
@@ -87,9 +87,25 @@ const creativeEvents = [
         prizes: '₹2,000',
         rules: 'Teams of 2 or individual participant. Questions based on tech history, IT trends, and pop culture.',
         process: 'Rapid Fire Questions'
+      },
+      {
+        id: 't6',
+        title: 'Cypher',
+        image: '/cypher_event.png',
+        link: 'https://docs.google.com/forms/d/e/1FAIpQLSdrezvbhEyBIB47dMB06ZieOKR1BwkSkq74euBe7Wl7_5BxkA/viewform?usp=sharing&ouid=102858058196643049393',
+        prizes: 'Winner:₹3,000',
+        rules: 'CTF style challenges. No destructive attacks outside targets.',
+        process: 'Access Provided -> Flag Hunting -> Verification -> Leaderboard'
+      },
+      {
+        id: 't7',
+        title: 'Bug Bounty',
+        image: '/bug_bounty_event.png',
+        link: 'https://docs.google.com/forms/d/e/1FAIpQLSceDt9A5-X2_5SZe9MGfvMhxFGphe0GxzxBaOiB80fD1Hx7-Q/viewform',
+        prizes: 'Winner: ₹2,000 | Runner-up: ₹1,000',
+        rules: 'Team Size: 1-3. Mode: Offline. Analyze provided codebases to either identify bugs or fix them.',
+        process: 'Download Problem -> Analyze & Debug Locally -> Upload Solution'
       }
-
-
     ]
   },
   {
@@ -179,7 +195,7 @@ const creativeEvents = [
         title: 'IPL Mock Auction',
         image: '/ipl_event.png',
         link: 'https://docs.google.com/forms/d/e/1FAIpQLSeZy6aPcEEnNAOqOfzH2_08aQsQUrBHCaRh-EhGg4mmEBj0XQ/viewform?usp=sharing&ouid=104815312117715119166',
-        prizes: 'Prizepool:₹10000+',
+        prizes: 'Winner:₹4,000 | Runner-up:₹3,000',
         rules: 'Teams of up to 4. Virtual budget limit. Highest team ratings wins.',
         process: 'Player Bidding -> Roster Formation -> Stats Evaluation -> Winner'
       }
@@ -188,15 +204,15 @@ const creativeEvents = [
   {
     id: 4,
     title: 'KALAKRITI',
-    list: 'Short Film Making, Digital Art',
+    list: 'Short Film, Digital Art',
     bg: '/fun_events.png',
     exclaim: 'WOW!',
     rotation: '-3deg',
     subEvents: [
       {
         id: 'k1',
-        title: 'Short Film Making',
-        image: '/short_film.png',
+        title: 'Short Film,\nDigital Art',
+        image: '/comic_uiux.png',
         link: 'https://docs.google.com/forms/d/e/1FAIpQLSeKC4e5HCxYHN9rmM3AhjkV4FLw3-27xZM1I9mOOhTUjoIBzw/viewform?usp=sharing&ouid=102858058196643049393',
         prizes: 'Winner:₹2,000 | Runner-up:₹1,000',
         rules: 'Duration: 3-10 mins. Theme: Cinematic Tech. Originals only.',
@@ -1139,10 +1155,10 @@ function App() {
                   <img src="/gmc.png" alt="Give My Certificate" className="sponsor-logo" />
                   <span className="sponsor-name">Give My Certificate (Certification Partner)</span>
                 </div>
-                <div className="sponsor-box small">
-                  <img src="/gdg.jpg" alt="GDG Guwahati" className="sponsor-logo" />
+                {/* <div className="sponsor-box small">
+                  <img src="https://placehold.co/200x200/ffffff/000000?text=GDG+Guwahati" alt="GDG Guwahati" className="sponsor-logo" />
                   <span className="sponsor-name">GDG Guwahati (Community Partner)</span>
-                </div>
+                </div> */}
               </div>
             </div>
 
@@ -1274,34 +1290,13 @@ function App() {
                         <div className="member-info">
                           <span className="member-name">{m.name}</span>
 
-                          {/* Creative Character Intel Pop-over */}
-                          {m.photo && (
-                            <div className="character-popover">
-                              <div className="comic-intel-card">
-                                <div className="intel-header">CHARACTER DATA: {group.division}</div>
-                                <div className="intel-image-frame dot-matrix">
-                                  <img src={m.photo} alt={m.name} loading="lazy" />
-                                  <div className="onomatopoeia-zap">ZAP!</div>
-                                </div>
-                                <div className="intel-footer">
-                                  <span className="intel-name">{m.name}</span>
-                                  <div className="intel-stats">
-                                    <div className="stat-label">SKILL_RANK</div>
-                                    <div className="stat-bar"><div className="stat-fill" style={{ width: '94%' }}></div></div>
-                                    <div className="stat-label">ENERGY_LEVEL</div>
-                                    <div className="stat-bar"><div className="stat-fill" style={{ width: '88%' }}></div></div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          )}
-                        </div>
-                        <div className="member-socials">
-                          <a href={m.linkedin} target="_blank" rel="noreferrer" className="social-icon linkedin"><Globe size={16} title="LinkedIn" /></a>
-                          <a href={m.insta} target="_blank" rel="noreferrer" className="social-icon insta"><Camera size={16} title="Instagram" /></a>
-                        </div>
-                      </div>
-                    ))}
+                  <div className="merch-bottom">
+                    <h4>{item.title}</h4>
+                    <div className="price-container">
+                      <span className="original-price">{item.originalPrice}</span>
+                      <span className="price">{item.price}</span>
+                    </div>
+                    <a href='https://docs.google.com/forms/d/e/1FAIpQLScwF_1m1UZg2CBN7yHwR0wR20Gy2ZHzEd4GVTQ3ardQZADcmg/viewform?usp=header' target="_blank" rel="noopener noreferrer"> <button className="comic-button btn-red" style={{ width: '100%' }}>BUY NOW</button></a>
                   </div>
                   <div className="panel-pop-label">HD 4.0</div>
                 </div>
